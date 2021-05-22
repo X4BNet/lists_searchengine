@@ -15,7 +15,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.MY_GITHUB_TOKEN }}
       with:
-        source_file: 'outputs/yahoo.txt'
+        source_file: 'outputs/bing.txt'
         destination_repo: 'X4Bnet/cfg_lists'
         destination_folder: '/input/'
         rename: bing.list
