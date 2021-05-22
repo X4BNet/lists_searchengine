@@ -1,4 +1,4 @@
-name: Update X4B.Net processing repo
+name: "Update X4B: Google"
 on:
   push:
     paths:
