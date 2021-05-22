@@ -1,0 +1,5 @@
+{
+    "require": {
+        "rlanvin/php-ip": "^2.1"
+    }
+}
