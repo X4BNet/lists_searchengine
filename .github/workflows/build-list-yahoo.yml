@@ -32,11 +32,11 @@ jobs:
         fi
 
         ips_covered=$(awk -F/ 'BEGIN{a=0}{if($2==""){a+1}else{a+=2^(32-$2)}}END{print a}' yahoo.lsv)
-        if [[ "$ips_covered" -lt 3000 ]]; then
+        if [[ "$ips_covered" -lt 300 ]]; then
           echo "Too few addresses covered"
           exit 1
         fi
-        if [[ "$ips_covered" -gt 30000 ]]; then
+        if [[ "$ips_covered" -gt 1000 ]]; then
           echo "Too many addresses covered"
           exit 1
         fi
