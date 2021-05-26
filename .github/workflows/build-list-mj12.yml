@@ -37,7 +37,7 @@ jobs:
           exit 1
         fi
         if [[ "$ips_covered" -gt 1000 ]]; then
-          echo "Too many addresses covered"
+          echo "Too many addresses covered ($ips_covered)"
           exit 1
         fi
     - name: Push Output
