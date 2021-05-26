@@ -4,6 +4,8 @@ Currently supported crawlers include:
  - Googlebot
  - Yahoo
  - Bing
+ - Yandex
  - Majestic12
+ - AhrefsBot
 
 This data is collected automatically and this list generation is automated. Use at own risk.
