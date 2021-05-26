@@ -1,4 +1,4 @@
-name: Build Database Update
+name: Build yahoo
 on:
   push:
     paths:
@@ -31,7 +31,7 @@ jobs:
           exit 1
         fi
 
-        ips_covered=$(awk -F/ 'BEGIN{a=0}{if($2==""){a+1}else{a+=2^(32-$2)}}END{print a}' yahoo.lsv)
+        ips_covered=$(awk -F/ 'BEGIN{a=0}{if($2==""){a+=1}else{a+=2^(32-$2)}}END{print a}' yahoo.lsv)
         if [[ "$ips_covered" -lt 300 ]]; then
           echo "Too few addresses covered"
           exit 1

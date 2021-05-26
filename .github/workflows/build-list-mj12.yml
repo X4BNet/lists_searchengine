@@ -1,4 +1,4 @@
-name: Build Database Update
+name: Build mj12
 on:
   push:
     paths:
@@ -31,12 +31,12 @@ jobs:
           exit 1
         fi
 
-        ips_covered=$(awk -F/ 'BEGIN{a=0}{if($2==""){a+1}else{a+=2^(32-$2)}}END{print a}' mj12.lsv)
-        if [[ "$ips_covered" -lt 300 ]]; then
+        ips_covered=$(awk -F/ 'BEGIN{a=0}{if($2==""){a+=1}else{a+=2^(32-$2)}}END{print a}' mj12.lsv)
+        if [[ "$ips_covered" -lt 2000 ]]; then
           echo "Too few addresses covered"
           exit 1
         fi
-        if [[ "$ips_covered" -gt 1000 ]]; then
+        if [[ "$ips_covered" -gt 4000 ]]; then
           echo "Too many addresses covered ($ips_covered)"
           exit 1
         fi
