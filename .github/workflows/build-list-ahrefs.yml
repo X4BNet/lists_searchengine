@@ -18,7 +18,7 @@ jobs:
         sudo apt-get install ipcalc php php-gmp
     - name: Build list
       run: |
-        cat inputs/ahrefs.lsv | php helpers/loosen.php > /tmp/ahrefs.lsv
+        cat inputs/ahrefsbot.lsv | php helpers/loosen.php > /tmp/ahrefs.lsv
         perl ./helpers/cleanup.pl /tmp/ahrefs.lsv > ahrefs.lsv
     - name: Test generated Lists
       run: |
