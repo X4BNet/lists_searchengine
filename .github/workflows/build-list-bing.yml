@@ -1,4 +1,6 @@
 name: Build bing
+on:
+  push:
     paths:
     - '.github/workflows/*'
     - inputs/bing.lsv

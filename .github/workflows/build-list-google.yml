@@ -1,4 +1,6 @@
 name: Build google
+on:
+  push:
     paths:
     - '.github/workflows/*'
     - inputs/google.lsv
