@@ -3,6 +3,8 @@ on:
   push:
     paths:
     - 'outputs/ahrefs.txt'
+    branches:
+    - main
   workflow_dispatch:
 
 jobs:

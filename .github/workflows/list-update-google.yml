@@ -3,6 +3,8 @@ on:
   push:
     paths:
     - 'outputs/google.txt'
+    branches:
+    - main
   workflow_dispatch:
 
 jobs:

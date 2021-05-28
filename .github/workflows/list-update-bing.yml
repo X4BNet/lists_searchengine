@@ -3,6 +3,8 @@ on:
   push:
     paths:
     - 'outputs/bing.txt'
+    branches:
+    - main
   workflow_dispatch:
 
 jobs:
