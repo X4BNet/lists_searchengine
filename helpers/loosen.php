@@ -65,6 +65,9 @@ class IPListCIDR
 		$cidrs = array();
 		foreach ($ip_ranges as $range) {
 			if (!is_array($range)) {
+                if(strpos($range, '/') !== false) {
+                    continue;
+                }
 				$ip = \PhpIP\IP::create($range);
 				$cidrs[] = (string)$ip;
 			} else {
@@ -84,7 +87,7 @@ class IPListCIDR
 	 *
 	 * @param $ips
 	 */
-	public function cidr2long(&$ips)
+	public function cidr2long(&$ips, $targetVersion = 4)
 	{
 		foreach ($ips as $k => $v) {
             $ips[$k] = $v = trim($v);
@@ -94,6 +97,10 @@ class IPListCIDR
 				}catch (\Exception $ex){
 					continue;
 				}
+                if($targetVersion && $v->getVersion() != $targetVersion) {
+                    unset($ips[$k]);
+                    continue;
+                }
 				foreach ($v as $kk => $i) {
 					if ($kk == 0) {
 						$ips[$k] = $i->numeric();
